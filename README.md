@@ -88,7 +88,7 @@ $ python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 2 - 
 Options:
 
 *   -t/--AnnotationType &lt;int&gt;: an integer to select the type of annotation. refGene:1, ensGen:2, knownGene:3 and Ensmbl: 4.  For detailed interpretation, please click [here](http://parnec.nuaa.edu.cn/liux/preprocessAnnotation.html).
-*   -a/--AnnotationFile &lt;path&gt;: the annotation file, eg; ensGene.txt. For detailed interpretation, please click [here](http://parnec.nuaa.edu.cn/liux/preprocessAnnotation.html).
+*   -a/--AnnotationFile &lt;path&gt;: the annotation file, eg; ensGene.txt. For detailed interpretation, please click [here](https://github.com/PUGEA/PGSeq/blob/master/Doc/README.md).
 *   -o/--AnnotationPrefix &lt;text&gt;: the header of  temporary files which include differential annotation information. Users can set arbitrary text, eg.: 'EnsPrefix' or 'abcd'.
 *   -d/--AlignmentFiles &lt;path&gt; : input  all alignment files.  eg: data1.sam,data2.sam.
 *   -s/--SelectedGenes &lt;path&gt;: optional parameters, file containing gene names. If you only calculate a subset of genes/isoforms, you can choose this option. Otherwise, PGSeq will calculate all genes/isoforms in the annotation file.
