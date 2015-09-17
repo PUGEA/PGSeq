@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<h1>Annotation Type</h1>
+<hr />
+<p>PGSeq supports three annotation databases: RefSeq, Ensembl and UCSC. All annotation information from three databases are downloaded from the <a href="http://genome.ucsc.edu/cgi-bin/hgTables?command=start">UCSC Table Browser</a>. And the annotation information from Ensembl has  an <a href="http://asia.ensembl.org/index.html">alternative (Ensembl website)</a>. Therefore, there are   four types of annotation files.</p>
+<p>The four types are:</p>
+<ol>
+  <li>refGene </li>
+  <li>ensGene </li>
+  <li>knownGene </li>
+  <li>Ensembl </li>
+</ol>
+<p>The first three types of annotation files are downloaded from UCSC Table Browser. The 'Ensembl' type of annotation file is downloaded from Ensembl website. </p>
+<p>The 'ensGene' and 'Ensembl' have the same annotation information as Ensembl database, but they have the differential format.</p>
+<p>&nbsp;</p>
+<hr />
+<h3>In the follow section, we will give four examples for four types of the annotation file respectively.</h3>
+<p>&nbsp;</p>
+<h3>1. refGene</h3>
+<ul>
+  <li>refGene.txt is downloaded from the UCSC Table Browser. (genome: Human, track: RefSeq Genes, table: refGene)</li>
+</ul>
+<table width="100%" border="0">
+  <tr>
+    <th align="left" bgcolor="#CCCCCC" scope="col"><p>$ python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 1 -a refGene.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam</p></th>
+  </tr>
+</table>
+<h3>&nbsp;</h3>
+<h3>2. ensGene</h3>
+<ul>
+  <li>ensGene.txt is downloaded from  the  UCSC Table Browser. (genome: Human, track: Ensembl Genes, table: ensGene)</li>
+</ul>
+<table width="100%" border="0">
+  <tr>
+    <th align="left" bgcolor="#CCCCCC" scope="col"><p>$ python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 2 -a ensGene.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam</p></th>
+  </tr>
+</table>
+<h3>&nbsp;</h3>
+<h3>3. knownGene</h3>
+<ul>
+  <li>In order to obtain the relationship between genes and isoforms, PGSeq need two annotation files: knownGene.txt and knownIsoform.txt </li>
+  <li>knownGene.txt is downloaded from   the UCSC Table Browser. (genome: Human, track: UCSC Genes, table: knownGene)</li>
+  <li>knownIsoform.txt is downloaded from the UCSC Table Browser. (genome: Human, track: UCSC Genes, table: knwonIsoforms)</li>
+</ul>
+<table width="100%" border="0">
+  <tr>
+    <th align="left" bgcolor="#CCCCCC" scope="col"><p>$ python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 3 -a knownGene.txt,knownIsoforms.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam</p></th>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>4. Ensembl</h3>
+<ul>
+  <li>Homo_sapiens.GRCH37.67.gtf is downloaded from the Ensembl website. Because we only download the 'gtf' format, this type is diffenent from the above three tpyes. </li>
+</ul>
+<table width="100%" border="0">
+  <tr>
+    <th align="left" bgcolor="#CCCCCC" scope="col"><p>$ python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 3 -a Homo_sapiens.GRCH37.67.gtf -o HumPrefix -d data1.sam,data2.sam,data3.sam</p></th>
+  </tr>
+</table>
+<p id="ii.calculatingexpressionvalues4"></p>
+<p id="ii.calculatingexpressionvalues">Since the 'ensGene' and 'Ensembl' have the same annotation information from Ensembl database, we suggest that users select the 'ensGene' type.</p>
+<p>&nbsp;</p>
+</body>
+</html>
