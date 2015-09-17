@@ -167,7 +167,7 @@ You can use the following commands to run the  example.
 
 * * *
 
-## <a name="example" id="example"></a> Simulation Data
+## <a name="example" id="example"></a> Simulation Data 
 
  We generated  two simulated datasets using our model based on the calculated parameters from the qRT-PCR validated genes of HBR sample in MAQC dataset. The two simulation datasets both used the Ensembl (NCBI37/hg19) as a reference.
 
