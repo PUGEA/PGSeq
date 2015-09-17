@@ -1,5 +1,5 @@
 # PGSeq
-A bioinformatics tools for estimating gene and isoform expression level
+A bioinformatics tool for estimating gene and isoform expression level
 
 
 Xuejun Liu (xuejun.liu@nuaa.edu.cn)
