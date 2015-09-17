@@ -44,7 +44,7 @@ $python ./PGSeq/preprocessAlignment.py -t 2 -a ensGene.txt -o HumPrefix -d data1
 
 *   In order to obtain the relationship between genes and isoforms, PGSeq need two annotation files: knownGene.txt and knownIsoform.txt*   knownGene.txt is downloaded from   the UCSC Table Browser. (genome: Human, track: UCSC Genes, table: knownGene)
 *   knownIsoform.txt is downloaded from the UCSC Table Browser. (genome: Human, track: UCSC Genes, table: knwonIsoforms)
-*   
+  
 ```shell
 $python ./PGSeq/preprocessAlignment.py -t 3 -a knownGene.txt,knownIsoforms.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam
 ```
