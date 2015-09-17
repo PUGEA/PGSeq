@@ -184,6 +184,4 @@ The PGSeq algorithm is developed by Xuejun Liu and Li Zhang. The PGSeq software 
 
 * * *
 
-Last Modified: Jan.28, 2015
-
 </body></html>
