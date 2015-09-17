@@ -15,7 +15,7 @@ PGSeq   uses the Poisson model to fit read counts for each gene and
   model is shared across all conditions for each individual gene, and automatically 
   captures all intrinsic position-specific effects.
 
-PGSeq pacakage is the software for estimating gene and isoform expression levels from RNA-seq data , and provides a user-friendly interface and supports parallel computation.  .
+PGSeq pacakage is the software for estimating gene and isoform expression levels from RNA-seq data, and provides a user-friendly interface and supports parallel computation.
 
 * * *
 
@@ -23,7 +23,7 @@ PGSeq pacakage is the software for estimating gene and isoform expression levels
 
 You can click [here](https://github.com/PUGEA/PGSeq/tree/master/PGSeq.1.1) to download the PGSeq software. 
 
-To compile PGSeq in Linux, simply run in the PGSeq folder.
+To compile PGSeq in Linux, run in the PGSeq folder.
 
 ```shell
 $ bash  setup.sh
@@ -32,7 +32,7 @@ $ bash  setup.sh
 ### Requirements:
 
 *   PGSeq  implementation uses Python (v.2.7) to pre-process the RNA-seq data and C language to calculate the gene and isoform expression levels.
-*   In PGSeq , the Python codes use two special modules, [NumPy](http://www.numpy.org/) and [PP](http://www.parallelpython.com/) (parallel python).
+*   In PGSeq, the Python codes use two special modules, [NumPy](http://www.numpy.org/) and [PP](http://www.parallelpython.com/) (parallel python).
 *   PGSeq uses Bowtie2 to align reads to transcript reference  sequences, so you need to have [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) installed.
 
 &nbsp;
@@ -80,7 +80,7 @@ Options:
 
 ### Step 3. Calculating Expression Values
 
-PGSeq starts calculating expression values using the following commands. 
+PGSeq starts calculating expression values using the following commands:
 
 ```shell
 $ python ./PGSeq/calculateExpression.py -a EnsPrefix --log
