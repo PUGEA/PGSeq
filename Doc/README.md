@@ -16,7 +16,7 @@ The 'ensGene' and 'Ensembl' have the same annotation information as Ensembl data
 
 * * *
 
-### In the follow section, we will give four examples for four types of the annotation file respectively.
+##### In the follow section, we will give four examples for four types of the annotation file respectively.
 
 &nbsp;
 
@@ -25,7 +25,7 @@ The 'ensGene' and 'Ensembl' have the same annotation information as Ensembl data
 *   refGene.txt is downloaded from the UCSC Table Browser. (genome: Human, track: RefSeq Genes, table: refGene)
 
 ```shell
-$python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 1 -a refGene.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam
+$python ./PGSeq/preprocessAlignment.py -t 1 -a refGene.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam
 ```
 
 ### &nbsp;
@@ -35,7 +35,7 @@ $python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 1 -a 
 *   ensGene.txt is downloaded from  the  UCSC Table Browser. (genome: Human, track: Ensembl Genes, table: ensGene)
 
 ```shell
-$python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 2 -a ensGene.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam
+$python ./PGSeq/preprocessAlignment.py -t 2 -a ensGene.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam
 ```
 
 ### &nbsp;
@@ -46,7 +46,7 @@ $python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 2 -a 
 *   knownIsoform.txt is downloaded from the UCSC Table Browser. (genome: Human, track: UCSC Genes, table: knwonIsoforms)
 *   
 ```shell
-$python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 3 -a knownGene.txt,knownIsoforms.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam
+$python ./PGSeq/preprocessAlignment.py -t 3 -a knownGene.txt,knownIsoforms.txt -o HumPrefix -d data1.sam,data2.sam,data3.sam
 ```
 
 &nbsp;
@@ -56,7 +56,7 @@ $python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 3 -a 
 *   Homo_sapiens.GRCH37.67.gtf is downloaded from the Ensembl website. Because we only download the 'gtf' format, this type is diffenent from the above three tpyes.
 
 ```shell
-$python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 4 -a Homo_sapiens.GRCH37.67.gtf -o HumPrefix -d data1.sam,data2.sam,data3.sam
+$python ./PGSeq/preprocessAlignment.py -t 4 -a Homo_sapiens.GRCH37.67.gtf -o HumPrefix -d data1.sam,data2.sam,data3.sam
 ```
 
 Since the 'ensGene' and 'Ensembl' have the same annotation information from Ensembl database, we suggest that users select the 'ensGene' type.
