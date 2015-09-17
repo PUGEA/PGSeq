@@ -25,14 +25,9 @@ You can click [here](https://github.com/PUGEA/PGSeq/tree/master/PGSeq.1.1) to do
 
 To compile PGSeq in Linux, simply run in the PGSeq folder.
 
-<table width="100%" border="0">
-  <tr>
-    <th align="left" bgcolor="#CCCCCC" scope="col">
-
+```shell
 $ bash  setup.sh
-</th>
-  </tr>
-</table>
+```
 
 ### Requirements:
 
@@ -50,16 +45,9 @@ $ bash  setup.sh
 
 Create index and align reads to reference transcript sequences:
 
-<table width="100%" border="0">
-  <tr>
-    <th align="left" bgcolor="#CCCCCC" scope="col">
-
-<span class="prettyprint">$ bowtie2</span><span class="pun">-</span><span class="pln">build </span><span class="pun">-</span><span class="pln">f </span><span class="pln"> ensGene.ref_transcript</span><span class="pun">.</span><span class="pln">fasta ensGe</span>ne.ref_transcript.index
-
-        $ bowtie2 -t -p 4 -q -k 100 -x <span class="pln">ensGe</span>ne.ref_transcript.index -1 read_1.fq -2 read_2.fq -S data1.sam --no-hd  --no-unal --no-mixed --no-discordant
-</th>
-  </tr>
-</table>
+```shell
+$ bowtie2 -t -p 4 -q -k 100 -x ensGene.ref_transcript.index -1 read_1.fq -2 read_2.fq -S data1.sam --no-hd  --no-unal --no-mixed --no-discordant
+```
 
 *   PGSeq  uses the transcript reference sequences, which can be downloaded from [UCSC](http://genome.ucsc.edu/) or [Ensembl](http://asia.ensembl.org/index.html) website.
 *   For paired-end reads, PGseq uses options '--no-mixed' and '--no-discordant'.
@@ -72,18 +60,13 @@ Create index and align reads to reference transcript sequences:
 
 PGSeq needs to pre-process the alignment files using the following steps, which include pre-computing the probabilities for each alignments and extracting the count data for each gene:
 
-<table width="100%" border="0">
-  <tr>
-    <th align="left" bgcolor="#CCCCCC" scope="col">
-
-$ python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 2 - a ensGene.txt -o EnsPrefix -d data1.sam,data2.sam,data3.sam
-
+```shell
+$ python ./PGSeq/preprocessAlignment.py -t 2 - a ensGene.txt -o EnsPrefix -d data1.sam,data2.sam,data3.sam
+```
 or
-
-$ python ./PGSeq/preprocessAlignment<span class="prettyprint">.py</span> -t 2 - a ensGene.txt -o EnsPrefix -d data1.sam,data2.sam,data3.sam    -s selected_genes
-</th>
-  </tr>
-</table>
+```shell
+$ python ./PGSeq/preprocessAlignment.py -t 2 - a ensGene.txt -o EnsPrefix -d data1.sam,data2.sam,data3.sam    -s selected_genes
+```
 
 Options:
 
@@ -99,18 +82,14 @@ Options:
 
 PGSeq starts calculating expression values using the following commands. 
 
-<table width="100%" border="0">
-  <tr>
-    <th align="left" bgcolor="#CCCCCC" scope="col">
-
+```shell
 $ python ./PGSeq/calculateExpression.py -a EnsPrefix --log
-
+```
 or
 
+```shell
 $ python ./PGSeq/calculateExpression.py -a EnsPrefix -s selected_genes --log
-</th>
-  </tr>
-</table>
+```
 
 Options:
 
@@ -146,22 +125,15 @@ Here, we give an example of the usage of PGSeq.
 
 You can use the following commands to run the  example.
 
-<table width="100%" border="0">
-  <tr>
-    <th align="left" bgcolor="#CCCCCC" scope="col">
+```shell
+$bowtie2 -t -p 4 -q -k 100 -x ensGene.ref_transcript.index -1 read_1.fq -2 read_2.fq -S data1.sam --no-hd  --no-unal --no-mixed --no-discordant ( The same treatment for the rest datasets.)
+ 
+$AlignData='data1.sam,data2.sam,data3.sam,data4.sam,data5.sam,data6.sam,data7.sam';
 
-<span class="prettyprint">$bowtie</span><span class="pun">2-</span><span class="pln">build </span><span class="pun">-</span><span class="pln">f </span><span class="pln"> ensGene.ref_transcript</span><span class="pun">.</span><span class="pln">fasta ensGe</span>ne.ref_transcript.index
+$python ./PGSeq/preprocessAlignment.py -t 2 - a ensGene.txt -o EnsPrefix -d $AligData -s  selected.genes.info
 
- $bowtie2 -t -p 4 -q -k 100 -x <span class="pln">ensGe</span>ne.ref_transcript.index -1 read_1.fq -2 read_2.fq -S data1.sam --no-hd  --no-unal --no-mixed --no-discordant ( The same treatment for the rest datasets.)
-
-<span class="prettyprint">$</span>AlignData=''data1.sam,data2.sam,data3.sam,data4.sam,data5.sam,data6.sam,data7.sam&quot;
-
-<span class="prettyprint">$python ./PGSeq/preprocessAlignment.py </span>-t 2 - a ensGene.txt -o EnsPrefix -d $AligData -s  selected.genes.info
-
-<span class="prettyprint">$ python ./PGSeq/calculateExpression.py -a EnsPrefix </span>-s  selected.genes.info --log
-</th>
-  </tr>
-</table>
+$python ./PGSeq/calculateExpression.py -a EnsPrefix -s  selected.genes.info --log
+```
 
 &nbsp;
 
