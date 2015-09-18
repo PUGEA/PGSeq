@@ -65,7 +65,7 @@ $ python ./PGSeq/preprocessAlignment.py -t 2 - a ensGene.txt -o EnsPrefix -d dat
 ```
 or
 ```shell
-$ python ./PGSeq/preprocessAlignment.py -t 2 - a ensGene.txt -o EnsPrefix -d data1.sam,data2.sam,data3.sam    -s selected_genes
+$ python ./PGSeq/preprocessAlignment.py -t 2 - a ensGene.txt -o EnsPrefix -d data1.sam,data2.sam,data3.sam -s selected_genes
 ```
 
 Options:
