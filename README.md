@@ -1,5 +1,5 @@
 # PGSeq
-A bioinformatics tool for estimating gene and isoform expression level
+A bioinformatics tool for estimating negative binomial distributed gene and isoform expression by modeling exon-specific bias
 
 
 Xuejun Liu (xuejun.liu@nuaa.edu.cn)
