@@ -1,6 +1,5 @@
 # PGSeq
-A bioinformatics tool for estimating negative binomial distributed gene and isoform expression by modeling exon-specific bias
-
+A bioinformatics tool for estimating negative binomial distributed gene and isoform expression by modeling exon-specific bias from RNA-seq data.
 
 Xuejun Liu (xuejun.liu@nuaa.edu.cn)
 
